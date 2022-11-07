@@ -60,10 +60,11 @@ _imageView = new UIImageView()
 ### DiffableDataSource:
 
 DiffableDataSourceSnapshot and DataSourceIdentifierType
-
+```
 DiffableDataSourceSnapshot<TSection, TItem> snapshot = new();
 snapshot.AppendSections(Sections);
 snapshot.AppendItems(Items, section);
+```
 
 ## Downloads
 
