@@ -52,7 +52,11 @@ public static class UiTableViewExtensions
 
     public static T SetSectionHeaderTopPadding<T>(this T tableView, nfloat value = default) where T : UITableView
     {
+#if IOS
         if (OperatingSystem.IsIOSVersionAtLeast(15))
+#else
+        if (OperatingSystem.IsMacCatalystVersionAtLeast(15))
+#endif
             tableView.SectionHeaderTopPadding = value;
         return tableView;
     }
