@@ -22,6 +22,12 @@ public static class UIButtonConfigurationExtensions
         configuration.BaseBackgroundColor = color;
         return configuration;
     }
+    
+    public static UIButtonConfiguration SetBaseForegroundColor(this UIButtonConfiguration configuration, UIColor? color)
+    {
+        configuration.BaseForegroundColor = color;
+        return configuration;
+    }
 
     public static UIButtonConfiguration SetImage(this UIButtonConfiguration configuration, UIImage? image)
     {
