@@ -67,4 +67,16 @@ public static class UILabelExtensions
         textView.LineBreakMode = breakMode;
         return textView;
     }
+
+    public static UILabel SetTextWithSpacing(this UILabel label, string text, double spacing)
+    {
+            var nsKern = new NSString("NSKern");
+            var nsSpacing = NSObject.FromObject(spacing);
+            var range = new NSRange(0, text.Length);
+            var attributedString = new NSMutableAttributedString(text);
+            attributedString.AddAttribute(nsKern, nsSpacing, range);
+            
+            label.AttributedText = attributedString;
+            return label;
+    }
 }
